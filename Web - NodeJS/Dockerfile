@@ -1,6 +1,7 @@
 FROM node:latest
 
-ADD /src /var/www # move src to /var/www
+ # move src to /var/www
+ADD /src /var/www
 
 ENV NODE_ENV 'production'
 
