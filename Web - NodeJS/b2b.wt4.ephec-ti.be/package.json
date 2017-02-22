@@ -1,0 +1,29 @@
+{
+  "name": "woodytoys-marketplace",
+  "version": "1.0.0",
+  "description": "marketplace of WoodyToys",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mathieu-R/WoodyToys.git"
+  },
+  "keywords": [
+    "WoodyToys",
+    "Docker"
+  ],
+  "author": "Mathieu-R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mathieu-R/WoodyToys/issues"
+  },
+  "homepage": "https://github.com/Mathieu-R/WoodyToys#readme",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.1",
+    "serve-static": "^1.11.2"
+  }
+}
