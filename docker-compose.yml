@@ -1,0 +1,11 @@
+version: '0.0.1'
+
+services:
+    web:
+        image: 'woodytoys/web'
+        port: '80:80'
+    db:
+        image: 'mongo'
+        port: '27017:27017'
+    dns:
+        image: docker-bind
