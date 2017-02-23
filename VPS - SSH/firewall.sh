@@ -12,6 +12,8 @@ echo "autorisation de la connection ssh"
 # Changer le port dans /etc/ssh/sshd_config ?
 # Par défaut [tcp | udp] sinon /tcp ou /udp
 sudo ufw allow 22/tcp 
+echo "autorisation du trafic dns..."
+sudo ufw allow 53
 echo "autorisation du trafic web"
 ufw allow "WWW Full" # HTTP et HTTPS
 echo "Activation du pare-feu..."
