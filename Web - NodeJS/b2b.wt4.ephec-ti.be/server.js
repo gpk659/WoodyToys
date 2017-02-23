@@ -2,6 +2,7 @@ const http = require('http');
 const express = require('express');
 const serveStatic = require('serve-static'); // static files
 const compression = require('compression'); // gzip
+const mongoose = require('mongoose');
 
 const app = express();
 const prod = process.env.NODE_ENV == 'production';

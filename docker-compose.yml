@@ -5,8 +5,8 @@ services:
         build: 
             context: ./Web - Nginx
         environment:
-            - user=test
-            - pass=test
+            - USER=test
+            - PASS=test
         image: 'woodytoys/nginx'
         ports: 
             - '80:80'
