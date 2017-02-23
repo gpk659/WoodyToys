@@ -1,24 +1,27 @@
-version: '1.0'
+version: '2.0'
 
 services:
     nginx:
         build: 
-            context: ./'Web - Nginx'
+            context: ./Web - Nginx
             args:
                 - user=test
                 - pass=test
         image: 'woodytoys/nginx'
     web:
         build: 
-            context: ./'Web - NodeJS'
+            context: ./Web - NodeJS
         image: 'woodytoys/web'
-        port: '80:80'
-        links: db:db
+        ports: 
+            - '80:80'
+        links: 
+            - db:db
     db:
         build: 
-            context: ./'Web - DB'
+            context: ./Web - DB
         image: 'mongo'
-        port: '27017:27017'
+        ports: 
+            - '27017:27017'
     dns:
         build:
             context: ./DNS
