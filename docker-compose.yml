@@ -4,6 +4,7 @@ services:
     web:
         image: 'woodytoys/web'
         port: '80:80'
+        links: db:db
     db:
         image: 'mongo'
         port: '27017:27017'
