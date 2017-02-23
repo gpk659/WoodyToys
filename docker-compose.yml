@@ -4,18 +4,26 @@ services:
     nginx:
         build: 
             context: ./Web - Nginx
-            args:
-                - user=test
-                - pass=test
+        environment:
+            - user=test
+            - pass=test
         image: 'woodytoys/nginx'
-    web:
-        build: 
-            context: ./Web - NodeJS
-        image: 'woodytoys/web'
         ports: 
             - '80:80'
+    public:
+        build: 
+            context: ./Web - NodeJS/wt4.ephec-ti.be
+        image: 'woodytoys/web'
+    marketplace:
+        build: 
+            context: ./Web - NodeJS/b2b.wt4.ephec-ti.be
+        image: 'woodytoys/web'
         links: 
             - db:db
+    public:
+        build: 
+            context: ./Web - NodeJS/intranet.wt4.ephec-ti.be
+        image: 'woodytoys/web'
     db:
         build: 
             context: ./Web - DB
@@ -26,3 +34,5 @@ services:
         build:
             context: ./DNS
         image: docker-bind
+        volumes: 
+            - /srv/docker/bind:/data \

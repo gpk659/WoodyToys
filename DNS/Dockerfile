@@ -1,1 +1,4 @@
-FROM docker-bind
+FROM sameersbn/bind
+
+EXPOSE 53
+
