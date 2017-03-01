@@ -1,38 +1,40 @@
 version: '2.0'
 
 services:
-    nginx:
-        build: 
-            context: ./Web - Nginx
-        environment:
-            - USER=test
-            - PASS=test
-        image: 'woodytoys/nginx'
-        ports: 
-            - '80:80'
-    public:
-        build: 
-            context: ./Web - NodeJS/wt4.ephec-ti.be
-        image: 'woodytoys/web'
-    marketplace:
-        build: 
-            context: ./Web - NodeJS/b2b.wt4.ephec-ti.be
-        image: 'woodytoys/web'
-        links: 
-            - db:db
-    public:
-        build: 
-            context: ./Web - NodeJS/intranet.wt4.ephec-ti.be
-        image: 'woodytoys/web'
-    db:
-        build: 
-            context: ./Web - DB
-        image: 'mongo'
-        ports: 
-            - '27017:27017'
     dns:
         build:
             context: ./DNS
         image: docker-bind
         volumes: 
             - /srv/docker/bind:/data \
+    db:
+        build: 
+            context: ./Web - DB
+        image: 'mongo'
+        ports: 
+            - '27017:27017'
+    nginx:
+        build: 
+            context: ./Web - Nginx
+        image: 'woodytoys/nginx'
+        ports: 
+            - '80:80'
+        links: 
+            - public:public
+            - marketplace:marketplace
+            - intranet:intranet
+    public:
+        build: 
+            context: ./Web - NodeJS/wt4.ephec-ti.be
+        image: 'woodytoys/public'
+    marketplace:
+        build: 
+            context: ./Web - NodeJS/b2b.wt4.ephec-ti.be
+        image: 'woodytoys/marketplace'
+        links: 
+            - db:db
+    intranet:
+        build: 
+            context: ./Web - NodeJS/intranet.wt4.ephec-ti.be
+        image: 'woodytoys/intranet'
+
