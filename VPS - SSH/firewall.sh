@@ -15,6 +15,6 @@ sudo ufw allow 22/tcp
 echo "autorisation du trafic dns..."
 sudo ufw allow 53
 echo "autorisation du trafic web"
-ufw allow "WWW Full" # HTTP et HTTPS
+sudo ufw allow "WWW Full" # HTTP et HTTPS
 echo "Activation du pare-feu..."
 sudo ufw enable
