@@ -32,8 +32,8 @@ before_install:
 
 script:
     - ./VPS-SSH/init.sh
-    - ./VPS-SSH/firewall.sh 
     - ./VPS-SSH/fail2ban.sh 
     - ./VPS-SSH/nmap.sh 
     - ./VPS-SSH/letsencrypt.sh 
     - docker-compose up --build -d
+    - ./VPS-SSH/firewall.sh 
