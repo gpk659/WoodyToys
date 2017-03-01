@@ -23,6 +23,12 @@ before_install:
     - sudo mv docker-compose /usr/local/bin
     # check version
     - docker-compose --version
+    # give permissions for scripts
+    - chmod +x ./VPS-SSH/init.sh
+    - chmod +x ./VPS-SSH/nmap.sh
+    - chmod +x ./VPS-SSH/firewall.sh
+    - chmod +x ./VPS-SSH/fail2ban.sh
+    - chmod +x ./VPS-SSH/letsencrypt.sh
 
 script:
     - ./VPS-SSH/firewall.sh 
