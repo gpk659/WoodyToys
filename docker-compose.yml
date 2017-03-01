@@ -3,19 +3,15 @@ version: '2.0'
 services:
     dns:
         build:
-            context: ./DNS
-        image: docker-bind
-        volumes: 
-            - /srv/docker/bind:/data \
+            context: ./dns
+        image: woodytoys/bind
     db:
         build: 
-            context: ./Web - DB
-        image: 'mongo'
-        ports: 
-            - '27017:27017'
+            context: ./db
+        image: 'woodytoys/mongo'
     nginx:
         build: 
-            context: ./Web - Nginx
+            context: ./nginx
         image: 'woodytoys/nginx'
         ports: 
             - '80:80'
@@ -23,18 +19,27 @@ services:
             - public:public
             - marketplace:marketplace
             - intranet:intranet
+        command: nginx -s reload
     public:
         build: 
-            context: ./Web - NodeJS/wt4.ephec-ti.be
+            context: ./websites/wt4.ephec-ti.be
         image: 'woodytoys/public'
+        volumes: 
+            - "./websites/wt4.ephec-ti.be:./var/www/wt4.ephec-ti.be"
+        command: node /var/www/wt4.ephec-ti.be/server
     marketplace:
         build: 
-            context: ./Web - NodeJS/b2b.wt4.ephec-ti.be
+            context: ./websites/b2b.wt4.ephec-ti.be
         image: 'woodytoys/marketplace'
+        volumes: 
+            - "./websites/b2b.wt4.ephec-ti.be:./var/www/b2b.wt4.ephec-ti.be"
         links: 
             - db:db
+        command: node /var/www/b2b.wt4.ephec-ti.be/server
     intranet:
         build: 
-            context: ./Web - NodeJS/intranet.wt4.ephec-ti.be
+            context: ./websites/intranet.wt4.ephec-ti.be
         image: 'woodytoys/intranet'
-
+        volumes: 
+            - "./websites/intranet.wt4.ephec-ti.be:./var/www/intranet.wt4.ephec-ti.be"
+        command: node /var/www/intranet.wt4.ephec-ti.be/server

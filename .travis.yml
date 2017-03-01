@@ -24,16 +24,16 @@ before_install:
     # check version
     - docker-compose --version
     # give permissions for scripts
-    - chmod +x ./VPS-SSH/init.sh
-    - chmod +x ./VPS-SSH/nmap.sh
-    - chmod +x ./VPS-SSH/firewall.sh
-    - chmod +x ./VPS-SSH/fail2ban.sh
-    - chmod +x ./VPS-SSH/letsencrypt.sh
+    - chmod +x ./vps/init.sh
+    - chmod +x ./vps/nmap.sh
+    - chmod +x ./vps/firewall.sh
+    - chmod +x ./vps/fail2ban.sh
+    - chmod +x ./vps/letsencrypt.sh
 
 script:
-    - ./VPS-SSH/init.sh
-    - ./VPS-SSH/fail2ban.sh 
-    - ./VPS-SSH/nmap.sh 
-    - ./VPS-SSH/letsencrypt.sh 
+    - ./vps/init.sh
+    - ./vps/fail2ban.sh 
+    - ./vps/nmap.sh 
+    - ./vps/letsencrypt.sh 
     - docker-compose up --build -d
-    - ./VPS-SSH/firewall.sh 
+    - ./vps/firewall.sh 
