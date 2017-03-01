@@ -5,4 +5,4 @@ sudo apt-get update
 echo "installation de nmap..."
 sudo apt-get install nmap
 echo "ports ouverts sur le VPS..."
-nmap -sS -sU localhost
+sudo nmap -sS -sU localhost
