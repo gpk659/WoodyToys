@@ -1,10 +1,10 @@
 version: '2.0'
 
 services:
-    #dns:
-        #build:
-            #context: ./dns
-        #image: woodytoys/bind
+    dns:
+        build:
+            context: ./dns
+        image: woodytoys/bind
     db:
         build: 
             context: ./db
@@ -24,15 +24,15 @@ services:
         build: 
             context: ./websites/wt4.ephec-ti.be
         image: 'woodytoys/public'
-        volumes: 
-            - "./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be"
+        #volumes: 
+            #- "./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be"
         command: node /var/www/wt4.ephec-ti.be/server
     marketplace:
         build: 
             context: ./websites/b2b.wt4.ephec-ti.be
         image: 'woodytoys/marketplace'
-        volumes: 
-            - "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
+        #volumes: 
+            #- "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
         links: 
             - db:db
         command: node /var/www/b2b.wt4.ephec-ti.be/server
@@ -40,6 +40,6 @@ services:
         build: 
             context: ./websites/intranet.wt4.ephec-ti.be
         image: 'woodytoys/intranet'
-        volumes: 
-            - "./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be"
+        #volumes: 
+            #- "./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be"
         command: node /var/www/intranet.wt4.ephec-ti.be/server
