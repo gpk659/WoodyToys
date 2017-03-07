@@ -1,5 +1,5 @@
 sudo: required
-services: 
+services:
     - docker
 
 language: node_js
@@ -11,9 +11,9 @@ env:
 
 before_install:
     # update repos
-    - sudo apt-get update 
+    - sudo apt-get update
     # force to be non-interactive
-    - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine 
+    - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
     # remove old docker-compose
     - sudo rm /usr/local/bin/docker-compose
     # get the new one
@@ -31,9 +31,9 @@ before_install:
     - chmod +x ./vps/letsencrypt.sh
 
 script:
-    - ./vps/init.sh
-    - ./vps/fail2ban.sh 
-    - ./vps/nmap.sh 
-    - ./vps/letsencrypt.sh 
+    #- ./vps/init.sh
+    #- ./vps/fail2ban.sh
+    #- ./vps/nmap.sh
+    #- ./vps/letsencrypt.sh
     - docker-compose up --build -d
-    - ./vps/firewall.sh 
+    #- ./vps/firewall.sh

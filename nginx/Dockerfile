@@ -1,4 +1,4 @@
-FROM nginx 
+FROM nginx
 
 LABEL maintainer "mathieu0709@gmail.com"
 
@@ -13,8 +13,6 @@ RUN apt-get update && apt-get install -y apache2-utils
 # create user ($USER and $PASS => env variables [-e in docker])
 #RUN htpasswd -c -b /etc/nginx/.htpasswd $USER $PASS
 
-# add the nginx config file
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf 
-#COPY ./main.conf /etc/nginx/nginx.conf
-
-
+# add the nginx config files
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./websites.conf /etc/nginx/conf.d/default.conf
