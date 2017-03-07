@@ -13,7 +13,7 @@ Mise en place d'une infrastructure réseau pour l'entreprise (fictive) WoodyToys
 
 ### Mise à jour du VPS
 Par défaut, Ubuntu 15.04 (vivid) et le docker-engine 1.9.1 sont installés sur le VPS.    
-Seulement, docker-compose v2 a besoin d'au minimum docker-engine **1.10** mais ce dernier n'est pas compatible avec la version d'Ubuntu installée sur le VPS.
+Seulement, docker-compose v2 a besoin d'au minimum docker-engine **1.10** pour fonctionner mais ce dernier n'est pas compatible avec la version d'Ubuntu installée sur le VPS.
 
 Afin de mettre à jour le VPS il suffit de :    
 
