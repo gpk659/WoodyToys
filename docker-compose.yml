@@ -3,7 +3,7 @@
 services:
     dns:
         build: ./dns
-        image: woodytoys/bind
+        image: 'woodytoys/bind'
     db:
         build: ./db
         image: 'woodytoys/mongo'
