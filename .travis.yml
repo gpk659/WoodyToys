@@ -11,18 +11,18 @@ env:
 
 before_install:
     # update repos
-    - sudo apt-get update
+    #- sudo apt-get update
     # force to be non-interactive
-    - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+    #- sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
     # remove old docker-compose
-    - sudo rm /usr/local/bin/docker-compose
+    #- sudo rm /usr/local/bin/docker-compose
     # get the new one
-    - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-    - chmod +x docker-compose
+    #- curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+    #- chmod +x docker-compose
     # move to the right folder
-    - sudo mv docker-compose /usr/local/bin
+    #- sudo mv docker-compose /usr/local/bin
     # check version
-    - docker-compose --version
+    #- docker-compose --version
     # give permissions for scripts
     - chmod +x ./vps/init.sh
     - chmod +x ./vps/nmap.sh
