@@ -9,7 +9,7 @@ services:
         image: woodytoys/mongo
     nginx:
         build: ./nginx
-        image: woodytoys/nginx
+        #image: woodytoys/nginx
         #ports:
             #- '80:80'
         #links:
