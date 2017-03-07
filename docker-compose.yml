@@ -16,7 +16,6 @@ services:
             - public:public
             - marketplace:marketplace
             - intranet:intranet
-        #command: nginx -s reload
     public:
         build: ./websites/wt4.ephec-ti.be
         image: woodytoys/public
