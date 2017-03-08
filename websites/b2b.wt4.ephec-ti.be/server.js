@@ -12,7 +12,7 @@ mongoose.createConnection('mongodb://localhost/marketplace');
 const productSchema = new mongoose.Schema({
     name: String,
     category: String,
-    cost: Integer
+    cost: Numbers
 });
 
 const product = mongoose.model('product', productSchema);
