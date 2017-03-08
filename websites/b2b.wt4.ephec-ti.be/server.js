@@ -7,7 +7,7 @@ const app = express();
 const prod = process.env.NODE_ENV == 'production';
 
 mongoose.promise = global.promise;
-mongoose.createConnection('mongodb://151.80.119.134/marketplace');
+//mongoose.createConnection('mongodb://151.80.119.134/marketplace');
 
 const productSchema = new mongoose.Schema({
     name: String,
