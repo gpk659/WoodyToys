@@ -31,6 +31,8 @@ services:
     marketplace:
         build:
             context: ./websites/b2b.wt4.ephec-ti.be
+        ports:
+            - 8080:8080
         image: 'woodytoys/marketplace'
         #volumes:
             #- "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
@@ -40,6 +42,8 @@ services:
     intranet:
         build:
             context: ./websites/intranet.wt4.ephec-ti.be
+        ports:
+            - 8080:8080
         image: 'woodytoys/intranet'
         #volumes:
             #- "./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be"
