@@ -25,7 +25,7 @@ app.use(serveStatic('static', {
 }));
 
 app.get('/', (req, res) => {
-    res.send('index.html');
+    res.render('index.html');
 })
 
 app.get('/products', async (req, res) => {

@@ -14,7 +14,7 @@ app.use(serveStatic('static', {
 }));
 
 app.get('/', (req, res) => {
-    res.send('index.html');
+    res.render('index.html');
 })
 
 http.createServer(app).listen(8080, _ => {
