@@ -19,7 +19,6 @@ services:
             - public:public
             - marketplace:marketplace
             - intranet:intranet
-        command: service nginx start
     public:
         build:
             context: ./websites/wt4.ephec-ti.be
