@@ -17,7 +17,7 @@ Seulement, docker-compose v2 a besoin d'au minimum docker-engine **1.10** pour f
 
 Afin de mettre à jour le VPS il suffit de :    
 
-- Mettre à jour Ubuntu : `sudo do-release-upgrade -d`    
+- Mettre à jour Ubuntu : `sudo do-release-upgrade`    
 - Mettre à jour le docker-engine et docker-compose : `cd vps && ./init.sh` 
 
 :exclamation: En cas de problème lors de la mise à jour en ssh, une session ssh est ouverte sur le port 1022, si un firewall est installé sur le VPS, il faut autoriser préalablement ce port.
