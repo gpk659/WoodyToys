@@ -15,4 +15,4 @@ RUN apt-get update && apt-get install -y apache2-utils
 
 # add the nginx config files
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./websites.conf /etc/nginx/conf.d/default.conf
+#COPY ./websites.conf /etc/nginx/conf.d/default.conf
