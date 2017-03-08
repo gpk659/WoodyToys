@@ -5,10 +5,15 @@ services:
         build:
             context: ./dns
         image: woodytoys/bind
+        environment: 
+            - POSTGRES_USER = "woodytoys"
+            - POSTGRES_PASSWORD = "superwoody"
+            - POSTGRES_DB = "woodymarket"
+        volumes: ./db/data:/var/lib/postgresql/data
     db:
         build:
             context: ./db
-        image: 'woodytoys/mongo'
+        image: 'postgres'
     nginx:
         build:
             context: ./nginx
@@ -22,20 +27,20 @@ services:
     public:
         build:
             context: ./websites/wt4.ephec-ti.be
-        image: 'woodytoys/public'
+        image: 'php'
         ports:
             - 8080
-        #volumes:
-            #- "./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be"
+        volumes:
+            - "./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be"
         command: node /var/www/wt4.ephec-ti.be/server
     marketplace:
         build:
             context: ./websites/b2b.wt4.ephec-ti.be
         ports:
             - 8081
-        image: 'woodytoys/marketplace'
-        #volumes:
-            #- "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
+        image: 'php'
+        volumes:
+            - "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
         links:
             - db:db
         command: node /var/www/b2b.wt4.ephec-ti.be/server
@@ -44,7 +49,7 @@ services:
             context: ./websites/intranet.wt4.ephec-ti.be
         ports:
             - 8082
-        image: 'woodytoys/intranet'
-        #volumes:
-            #- "./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be"
+        image: 'php'
+        volumes:
+            - "./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be"
         command: node /var/www/intranet.wt4.ephec-ti.be/server
