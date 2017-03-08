@@ -23,6 +23,8 @@ services:
         build:
             context: ./websites/wt4.ephec-ti.be
         image: 'woodytoys/public'
+        ports:
+            - 8080:8080
         #volumes:
             #- "./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be"
         command: node /var/www/wt4.ephec-ti.be/server
