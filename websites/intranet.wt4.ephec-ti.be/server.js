@@ -17,6 +17,6 @@ app.get('/', (req, res) => {
     res.render('index.html');
 })
 
-http.createServer(app).listen(8080, _ => {
-    console.log('Listening on 8080');
+http.createServer(app).listen(8082, _ => {
+    console.log('Listening on 8082');
 })

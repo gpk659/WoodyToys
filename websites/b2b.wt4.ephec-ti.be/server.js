@@ -32,6 +32,6 @@ app.get('/products', async (req, res) => {
     //const products = await product.findAll();
 });
 
-http.createServer(app).listen(8080, _ => {
-    console.log('Listening on 8080');
+http.createServer(app).listen(8081, _ => {
+    console.log('Listening on 8081');
 })
