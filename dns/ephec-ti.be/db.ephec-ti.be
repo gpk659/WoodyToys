@@ -3,7 +3,7 @@
 ; ZONE : wt4.ephec-ti.be
 ; ------------------------------------------------------------------
 # Durée de validité en seconde (2min)
-$TTL 7200 
+$TTL 7200
 
 @       IN      SOA    ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
                                         2017022301 ; Serial
@@ -15,8 +15,8 @@ $TTL 7200
 ; NAMESERVERS
 
 @
-@                   IN                NS                   ephec-ti.be.
-@					IN				  AAAA				   151.80.119.137
+ns1.ephec-ti.be     IN                NS                   wt4.ephec-ti.be.
+wt4.ephec-ti.be.	IN				  A				       151.80.119.134
 
 
 ; Sous-domaines - Serveurs Web
@@ -24,7 +24,7 @@ www					IN 				  CNAME				   www.wt4.ephec-ti.be
 b2b					IN				  CNAME				   b2b.wt4.ephec-ti.be
 intranet			        IN 				  CNAME				   intranet.wt4.ephec-ti.be
 
-; Serveur mails     
+; Serveur mails
 
 ; MX
 
