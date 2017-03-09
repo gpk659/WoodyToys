@@ -1,6 +1,6 @@
 types {
 
-    # Data interchange
+  # Data interchange
 
     application/atom+xml                  atom;
     application/json                      json map topojson;
