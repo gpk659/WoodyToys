@@ -21,7 +21,7 @@ services:
             - 80:80
         volumes: 
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-            - ./nginx/mime.types:/etc/nginx/conf/mime.types
+            - ./nginx/mime.types:/etc/nginx/mime.types
         links:
             - public:public
             - marketplace:marketplace
