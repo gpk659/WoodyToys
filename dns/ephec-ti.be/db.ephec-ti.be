@@ -5,7 +5,7 @@
 # Durée de validité en seconde (2min)
 $TTL 7200 
 
-@       IN      SOA    ns1.ephec-ti.be. admin.wt4.ephec-ti.be. (
+@       IN      SOA    ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
                                         2017022301 ; Serial
                                         14400      ; Refresh
                                         3600       ; Retry
