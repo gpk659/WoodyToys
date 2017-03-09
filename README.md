@@ -24,5 +24,5 @@ Afin de mettre à jour le VPS il suffit de :
 :exclamation: Si un firewall est installé sur le VPS, il faut autoriser préalablement ce port.
 ### Utilisation
 `docker-compose build`     
-`docker-compose up`
+`docker-compose up -d`
 
