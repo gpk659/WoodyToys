@@ -7,11 +7,11 @@ services:
         image: woodytoys/bind
     db:
         image: 'postgres'
-        environment: 
+        environment:
             - POSTGRES_USER = "woodytoys"
             - POSTGRES_PASSWORD = "superwoody"
             - POSTGRES_DB = "woodymarket"
-        volumes: 
+        volumes:
             - ./db/data:/var/lib/postgresql/data
     nginx:
         build:
@@ -19,9 +19,12 @@ services:
         image: 'woodytoys/nginx'
         ports:
             - 80:80
-        volumes: 
+        volumes:
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf
             - ./nginx/mime.types:/etc/nginx/mime.types
+            - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be/
+            - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
+            - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be
         links:
             - public:public
             - marketplace:marketplace
