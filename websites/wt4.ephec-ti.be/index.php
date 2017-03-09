@@ -43,8 +43,8 @@
 					<section id="banner">
 						<div class="inner">
 							<div class="logo"><span class="icon fa-diamond"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+							<h2>WoodyToys</h2>
+							<p>Premium Quality - 100% Money-Back Guarantee</p>
 						</div>
 					</section>
 
