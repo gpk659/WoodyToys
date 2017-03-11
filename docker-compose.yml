@@ -33,6 +33,7 @@ services:
             - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be/
             - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
             - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be
+            - ./nginx/letsencrypt:/etc/letsencrypt/
         links:
             - public:public
             - marketplace:marketplace
