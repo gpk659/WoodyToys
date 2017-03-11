@@ -10,6 +10,7 @@
 	$db = 'woodymarket';
 	$username = 'woodytoys';
 	$password = 'superwoody';
+	$dbstatus = "";
 
 	try {
 		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
@@ -389,13 +390,12 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script defer src="assets/js/jquery.min.js"></script>
+			<script defer src="assets/js/jquery.dropotron.min.js"></script>
+			<script defer src="assets/js/skel.min.js"></script>
+			<script defer src="assets/js/skel-viewport.min.js"></script>
+			<script defer src="assets/js/util.js"></script>
+			<script defer src="assets/js/main.js"></script>
 
 	</body>
 </html>
