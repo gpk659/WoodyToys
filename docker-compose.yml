@@ -8,6 +8,8 @@ services:
         - ./dns/etc/resolv.conf:/etc/resolv.conf
         - ./dns/var/cache/bind:/var/cache/bind
         - ./dns/var/log/named:/var/log/named
+    ports:
+        - 53:53
     db:
         image: postgres
         environment:
