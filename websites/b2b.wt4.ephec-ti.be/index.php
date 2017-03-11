@@ -4,6 +4,33 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?php
+	$host = 'localhost';
+	$port = 5432;
+	$db = 'woodymarket';
+	$username = 'woodytoys';
+	$password = 'superwoody';
+
+	try {
+		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
+
+		if ($pdo) {
+			$dbstatus =
+				"<p>Connecté avec succès à la base de données<strong>postgresql</strong>.<br />
+				Powered with Docker.</p>";
+		} else {
+			$dbstatus =
+				"<p>Non Connecté à la base de données<strong>postgresql</strong>.<br />
+				Problème de configuration ?</p>";
+		}
+
+		$pdo->closeCursor();
+
+	} catch (PDOException $e) {
+		die $e->getMessage();
+	}
+
+?>
 <html>
 	<head>
 		<title>WoodyToys - Marketplace</title>
@@ -22,7 +49,7 @@
 
 						<!-- Logo -->
 							<h1 id="logo"><a href="index.html">WoodyToys - Marketplace</a></h1>
-							<p>Buy the nicest wood toys.</p>
+							<p>Premium quality - 100% money-back guarantee.</p>
 
 						<!-- Nav -->
 							<nav id="nav">
@@ -114,8 +141,7 @@
 				<div id="banner-wrapper">
 					<div class="inner">
 						<section id="banner" class="container">
-							<p>Use this space for <strong>profound thoughts</strong>.<br />
-							Or an enormous ad. Whatever.</p>
+							<?= $dbstatus ?>
 						</section>
 					</div>
 				</div>
