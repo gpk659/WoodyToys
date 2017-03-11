@@ -2,6 +2,7 @@ version: '2.0'
 
 services:
     dns:
+        restart: always
         image: pstauffer/bind
         volumes:
             - ./dns/etc/bind:/etc/bind
