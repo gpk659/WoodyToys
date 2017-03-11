@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <?php
-	$host = 'localhost';
+	$host = db;
 	$port = 5432;
 	$db = 'woodymarket';
 	$username = 'woodytoys';
