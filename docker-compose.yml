@@ -9,7 +9,8 @@ services:
             - ./dns/var/cache/bind:/var/cache/bind
             - ./dns/var/log/named:/var/log/named
         ports:
-            - 53:53
+            - 53:53/udp
+            - 53:53/tcp
     db:
         image: postgres
         environment:
@@ -42,12 +43,6 @@ services:
         image: bitnami/php-fpm
         volumes:
             - "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
-        links:
-            - db:db
-    ecommerce:
-        image: bitnami/php-fpm
-        volumes:
-            - "./websites/ecommerce.wt4.ephec-ti.be:/var/www/ecommerce.wt4.ephec-ti.be"
         links:
             - db:db
     intranet:
