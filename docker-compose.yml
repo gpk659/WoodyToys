@@ -2,11 +2,14 @@ version: '2.0'
 
 services:
     dns:
-        build:
-            context: ./dns
-        image: woodytoys/bind
+        image: ventz/bind
+    volumes:
+        - ./dns/etc/bind:/etc/bind
+        - ./dns/etc/resolv.conf:/etc/resolv.conf
+        - ./dns/var/cache/bind:/var/cache/bind
+        - ./dns/var/log/named:/var/log/named
     db:
-        image: 'postgres'
+        image: postgres
         environment:
             - POSTGRES_USER = "woodytoys"
             - POSTGRES_PASSWORD = "superwoody"
