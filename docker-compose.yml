@@ -17,8 +17,6 @@ services:
             - POSTGRES_USER = "woodytoys"
             - POSTGRES_PASSWORD = "superwoody"
             - POSTGRES_DB = "woodymarket"
-        volumes:
-            - ./db/data:/var/lib/postgresql/data
     nginx:
         restart: always
         build:
