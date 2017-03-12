@@ -16,10 +16,12 @@
 		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
 
 		if ($pdo) {
+			echo "ok";
 			$dbstatus =
 				"<p>Connecté avec succès à la base de données<strong>postgresql</strong>.<br />
 				Powered with Docker.</p>";
 		} else {
+			echo "pas ok";
 			$dbstatus =
 				"<p>Non Connecté à la base de données<strong>postgresql</strong>.<br />
 				Problème de configuration ?</p>";
@@ -391,9 +393,11 @@
 
 		<!-- Scripts -->
 			<script defer src="assets/js/jquery.min.js"></script>
-			<script defer src="assets/js/jquery.dropotron.min.js"></script>
+			<!--<script defer src="assets/js/jquery.dropotron.min.js"></script>-->
+			<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dropdown/2.0.3/jquery.dropdown.min.js"></script>
 			<script defer src="assets/js/skel.min.js"></script>
-			<script defer src="assets/js/skel-viewport.min.js"></script>
+			<!--<script defer src="assets/js/skel-viewport.min.js"></script>-->
+			<script defer src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel-viewport.min.js"></script>
 			<script defer src="assets/js/util.js"></script>
 			<script defer src="assets/js/main.js"></script>
 
