@@ -2,7 +2,7 @@ version: '2.0'
 
 services:
     dns:
-        image: pstauffer/bind:stable
+        image: resystit/bind9
         volumes:
             - ./dns/etc/bind:/etc/bind
             - ./dns/etc/resolv.conf:/etc/resolv.conf
