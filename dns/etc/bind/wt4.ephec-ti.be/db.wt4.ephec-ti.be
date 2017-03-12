@@ -4,12 +4,12 @@
 ; ------------------------------------------------------------------
 $ORIGIN wt4.ephec-ti.be.
 ; empèche un utilisateur malveillant de récupérer la version de bind et de faire une attaque par après
-version "woodytoys"
+; version "woodytoys"
 ; Durée de validité en seconde (10 min)
 $TTL 600
 
 @       IN      SOA     ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
-                        2017031202 ; Serial
+                        2017031203 ; Serial
                         14400      ; Refresh (après 4h)
                         3600       ; Retry (après 1 heure)
                         1209600    ; Expire (après 1 semaine)
