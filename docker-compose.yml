@@ -14,9 +14,9 @@ services:
     db:
         image: postgres
         environment:
-            - POSTGRES_USER = woodytoys
-            - POSTGRES_PASSWORD = superwoody
-            - POSTGRES_DB = woodymarket
+            - POSTGRES_USER=woodytoys
+            - POSTGRES_PASSWORD=superwoody
+            - POSTGRES_DB=woodymarket
     nginx:
         restart: always
         build:
@@ -39,15 +39,15 @@ services:
     public:
         image: bitnami/php-fpm
         volumes:
-            - "./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be"
+            - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be
     marketplace:
         image: bitnami/php-fpm
         volumes:
-            - "./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be"
-            - "./websites/php.ini":/opt/bitnami/php/lib/php.ini
+            - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
+            - ./websites/php.ini":/opt/bitnami/php/lib/php.ini
         links:
             - db:db
     intranet:
         image: bitnami/php-fpm
         volumes:
-            - "./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be"
+            - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be
