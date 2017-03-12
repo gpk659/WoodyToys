@@ -2,8 +2,7 @@ version: '2.0'
 
 services:
     dns:
-        restart: always
-        image: pstauffer/bind
+        image: pstauffer/bind:stable
         volumes:
             - ./dns/etc/bind:/etc/bind
             - ./dns/etc/resolv.conf:/etc/resolv.conf
@@ -15,9 +14,9 @@ services:
     db:
         image: postgres
         environment:
-            - POSTGRES_USER = "woodytoys"
-            - POSTGRES_PASSWORD = "superwoody"
-            - POSTGRES_DB = "woodymarket"
+            - POSTGRES_USER = woodytoys
+            - POSTGRES_PASSWORD = superwoody
+            - POSTGRES_DB = woodymarket
     nginx:
         restart: always
         build:
