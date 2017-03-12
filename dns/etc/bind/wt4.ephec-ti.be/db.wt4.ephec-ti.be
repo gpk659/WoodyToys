@@ -20,8 +20,10 @@ wt4.ephec-ti.be.        IN          NS              ns1.wt4.ephec-ti.be.
 ns1.wt4.ephec-ti.be.    IN          A				151.80.119.134
 
 ; Sous-domaines - Serveurs Web
-wt4.ephec-ti.be             IN          A           151.80.119.134 
-b2b.wt4.ephec-ti.be			IN		    A			151.80.119.134
-intranet.wt4.ephec-ti.be	IN 			A           151.80.119.134
+;wt4.ephec-ti.be             IN          A           151.80.119.134 
+;b2b.wt4.ephec-ti.be			IN		    A			151.80.119.134
+;intranet.wt4.ephec-ti.be	IN 			A           151.80.119.134
 
 www                         IN          CNAME       wt4.ephec-ti.be
+b2b                         IN          CNAME       wt4.ephec-ti.be 
+intranet                    IN          CNAME       wt4.ephec-ti.be 
