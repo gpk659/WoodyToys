@@ -1,0 +1,15 @@
+$TTL    600
+$ORIGIN 80.119.151.in-addr.arpa.
+@       IN      SOA     ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
+                        2017031301      ; Serial
+                        3600            ; Refresh
+                        300             ; Retry
+                        2419200         ; Expire
+                        600 )        ; Negative Cache TTL
+
+; Serveur de nom
+@       IN      NS       ns1.wt4.ephec-ti.be.
+
+; DNS inverse
+134     IN      PTR      ns1.wt4.ephec-ti.be.
+134	    IN	    PTR	     intranet.wt4.ephec-ti.be.

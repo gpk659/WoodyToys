@@ -1,3 +1,4 @@
 */**/node_modules
 */**/*.log
 dns/var/**/*
+.DS_Store
