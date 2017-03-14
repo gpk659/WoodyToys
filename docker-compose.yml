@@ -17,12 +17,11 @@ services:
             - ./dns/interne/etc/bind:/etc/bind
             - ./dns/interne/etc/resolv.conf:/etc/resolv.conf
     db:
-        image: mysql
+        image: postgres
         environment:
-            - MYSQL_USER=woodytoys
-            - MYSQL_PASSWORD=superwoody
-            - MYSQL_DATABASE=woodymarket
-            - MYSQL_RANDOM_ROOT_PASSWORD=yes
+            - POSTGRES_USER=woodytoys
+            - POSTGRES_PASSWORD=superwoody
+            - POSTGRES_DB=woodymarket
     nginx:
         restart: always
         build:
