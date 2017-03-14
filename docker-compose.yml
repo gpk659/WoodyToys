@@ -51,7 +51,7 @@ services:
             - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
             #- ./websites/php.ini:/opt/bitnami/php/etc/php.ini
         working_dir: /var/www/b2b.wt4.ephec-ti.be
-        entrypoint: node server.js
+        command: sh-c "npm install && node server.js"
         links:
             - db:db
     intranet:
