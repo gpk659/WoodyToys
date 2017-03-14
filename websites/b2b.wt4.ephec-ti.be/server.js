@@ -17,7 +17,7 @@ const pgsql = pgp(connection);
 
 let dbstatus = 'connection en cours...';
 
-app.get('/', (req, res) {
+app.get('/', (req, res) => {
     fs.readFile('index.html')
         .then(file => file.toString('utf-8'))
         .then(file => hbs.compile(file)(dbstatus))
