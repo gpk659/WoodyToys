@@ -17,11 +17,12 @@ services:
             - ./dns/interne/etc/bind:/etc/bind
             - ./dns/interne/etc/resolv.conf:/etc/resolv.conf
     db:
-        image: mariadb
+        image: mysql
         environment:
             - MYSQL_USER=woodytoys
             - MYSQL_PASSWORD=superwoody
             - MYSQL_DATABASE=woodymarket
+            - MYSQL_RANDOM_ROOT_PASSWORD=yes
     nginx:
         restart: always
         build:
