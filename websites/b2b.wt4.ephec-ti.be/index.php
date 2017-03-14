@@ -139,7 +139,7 @@
 						<section id="banner" class="container">
 							<?php
 							if ($dbstatus) {
-								echo $dbstatus 
+								echo $dbstatus; 
 							}
 							?>
 						</section>
