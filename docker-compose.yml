@@ -42,7 +42,7 @@ services:
             - marketplace:marketplace
             - intranet:intranet
     public:
-        image: bitnami/php-fpm
+        image: php:7.1.2-fpm
         volumes:
             - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be
     marketplace:
@@ -55,6 +55,6 @@ services:
         links:
             - db:db
     intranet:
-        image: bitnami/php-fpm
+        image: php:7.1.2-fpm
         volumes:
             - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be

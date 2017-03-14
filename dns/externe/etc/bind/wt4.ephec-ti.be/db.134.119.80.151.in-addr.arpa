@@ -9,8 +9,10 @@ $ORIGIN 80.119.151.in-addr.arpa.
 
 ; Serveur de nom
 @       IN      NS       ns1.wt4.ephec-ti.be.
+@       IN      NS       ns2.wt4.ephec-ti.be.
 
 ; DNS inverse
 134     IN      PTR      ns1.wt4.ephec-ti.be.
+157     IN      PTR      ns2.wt4.ephec-ti.be.
 134	    IN	    PTR	     www.wt4.ephec-ti.be.
 134     IN      PTR      b2b.ephec-ti.be.

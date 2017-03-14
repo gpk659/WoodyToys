@@ -10,16 +10,14 @@
 	$db = 'woodymarket';
 	$username = 'woodytoys';
 	$password = 'superwoody';
-	$dbstatus = "";
+	//$dbstatus = "";
 	try {
 		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
 		if ($pdo) {
-			echo "ok";
 			$dbstatus =
 				"<p>Connecté avec succès à la base de données<strong>postgresql</strong>.<br />
 				Powered with Docker.</p>";
 		} else {
-			echo "pas ok";
 			$dbstatus =
 				"<p>Non Connecté à la base de données<strong>postgresql</strong>.<br />
 				Problème de configuration ?</p>";
@@ -139,7 +137,7 @@
 				<div id="banner-wrapper">
 					<div class="inner">
 						<section id="banner" class="container">
-							<?= dbstatus ?>
+							<?php if($dbstatus) ?> <?= $dbstatus ?> <?php endif; ?>
 						</section>
 					</div>
 				</div>

@@ -9,7 +9,7 @@ $ORIGIN wt4.ephec-ti.be.
 $TTL 60
 
 @       IN      SOA    ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
-                                            2017031302 ; Serial
+                                            2017031303 ; Serial
                                             14400      ; Refresh (après 4h)
                                             3600       ; Retry (après 1 heure)
                                             1209600    ; Expire (après 1 semaine)
@@ -17,7 +17,9 @@ $TTL 60
 
 ; Serveur de nom
 wt4.ephec-ti.be.        IN          NS              ns1.wt4.ephec-ti.be.
+wt4.ephec-ti.be.        IN          NS              ns2.wt4.ephec-ti.be.
 ns1.wt4.ephec-ti.be.    IN          A				151.80.119.134
+ns2.wt4.ephec-ti.be.    IN          A               151.80.119.157
 
 ; Sous-domaines - Serveurs Web
 wt4.ephec-ti.be.             IN          A           151.80.119.134
