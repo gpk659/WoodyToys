@@ -10,7 +10,8 @@
 	$db = 'woodymarket';
 	$username = 'woodytoys';
 	$password = 'superwoody';
-	//$dbstatus = "";
+	$dbstatus = NULL;
+
 	try {
 		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
 		if ($pdo) {
@@ -22,7 +23,7 @@
 				"<p>Non Connecté à la base de données<strong>postgresql</strong>.<br />
 				Problème de configuration ?</p>";
 		}
-		$pdo->closeCursor();
+		$pdo = null;
 	} catch (PDOException $e) {
 		echo $e->getMessage();
 	}
@@ -139,7 +140,7 @@
 						<section id="banner" class="container">
 							<?php
 							if ($dbstatus) {
-								echo $dbstatus; 
+								echo $dbstatus;
 							}
 							?>
 						</section>
