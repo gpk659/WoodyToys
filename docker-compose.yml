@@ -49,7 +49,7 @@ services:
         image: bitnami/php-fpm
         volumes:
             - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
-            - ./websites/php.ini:/opt/bitnami/php/etc/php.ini
+            - ./websites/php.ini:/opt/bitnami/php-fpm/etc/php.ini
         links:
             - db:db
     intranet:
