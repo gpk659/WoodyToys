@@ -137,7 +137,11 @@
 				<div id="banner-wrapper">
 					<div class="inner">
 						<section id="banner" class="container">
-							<?php if($dbstatus) ?> <?= $dbstatus ?> <?php endif; ?>
+							<?php
+							if ($dbstatus) {
+								echo $dbstatus 
+							}
+							?>
 						</section>
 					</div>
 				</div>
