@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
     fs.readFile('index.html')
         .then(file => file.toString('utf-8'))
         .then(file => hbs.compile(file)(dbstatus))
-        .then(file => res.send(file));
+        .then(file => res.send(file))
         .catch(e => console.log(e));
 })
 
