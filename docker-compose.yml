@@ -47,7 +47,9 @@ services:
         volumes:
             - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be
     marketplace:
-        image: bitnami/php-fpm
+        build:
+            context: ./websites/b2b.wt4.ephec-ti.be
+        image: 'woodytoys/marketplace'
         volumes:
             - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
             - ./websites/php.ini:/opt/bitnami/php-fpm/etc/php.ini
