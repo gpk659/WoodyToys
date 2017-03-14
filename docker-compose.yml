@@ -46,11 +46,10 @@ services:
         volumes:
             - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be
     marketplace:
-        build:
-            context: ./websites/b2b.wt4.ephec-ti.be
-        image: woodytoys/b2b
+        image: node:latest
+        working_dir: /usr/src/app
         volumes:
-            - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
+            - ./websites/b2b.wt4.ephec-ti.be:/usr/src/app
             #- ./websites/php.ini:/opt/bitnami/php/etc/php.ini
         links:
             - db:db
