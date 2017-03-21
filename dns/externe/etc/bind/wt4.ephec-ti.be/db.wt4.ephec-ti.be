@@ -26,3 +26,9 @@ wt4.ephec-ti.be.             IN          A           151.80.119.134
 b2b.wt4.ephec-ti.be.         IN          A			 151.80.119.134
 
 www                         IN          CNAME       wt4.ephec-ti.be.
+
+; MX
+wt4.ephec-ti.be.            IN          MX          smtp.wt4.ephec-ti.be.
+
+; Serveurs mail
+smtp.wt4.ephec-ti.be        IN          A   10      151.80.119.157
