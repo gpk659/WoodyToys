@@ -58,3 +58,32 @@ services:
         image: php:7.1.2-fpm
         volumes:
             - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be
+    mail:
+        image: tvial/docker-mailserver:2.1
+        hostname: mail
+        domainname: wt4.ephec-ti.be.
+        ports:
+        - 25:25 # smtp
+        - 143:143 # imap
+        - 587:587 # smtp / ssl
+        - 993:993 # imap / ssl
+        #- 110:100 # pop3
+        #- 995:995 # pop3 / ssl
+        volumes:
+        - mail/ingoing/emails:/var/mail
+        #- mailstate:/var/mail-state
+        - ./mail:/tmp/docker-mailserver/
+        environment:
+        - ENABLE_SPAMASSASSIN=1 # antispam
+        - ENABLE_CLAMAV=1 # antivirus
+        - ENABLE_FAIL2BAN=1
+        - ENABLE_POSTGREY=1 # filtre par liste grise
+        #- ENABLE_POP3=1
+        - ENABLE_FETCHMAIL=1
+        - ONE_DIR=0
+        - DMS_DEBUG=1 # env = dev
+        - SA_TAG=2.0
+        - SA_TAG2=6.31
+        #- SSL_TYPE=letsencrypt
+        cap_add:
+        - NET_ADMIN
