@@ -87,3 +87,5 @@ services:
         #- SSL_TYPE=letsencrypt
         cap_add:
         - NET_ADMIN
+        volumes:
+            - /etc/letsencrypt:/etc/letsencrypt/

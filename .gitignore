@@ -2,3 +2,5 @@
 */**/*.log
 dns/var/**/*
 .DS_Store
+mail/ingoing/emails
+mail/fetchmail.cf
