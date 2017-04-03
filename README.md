@@ -24,5 +24,6 @@ Afin de mettre à jour le VPS il suffit de :
 :exclamation: En cas de problème lors de la mise à jour en ssh, une session ssh est ouverte sur le port 1022.     
 :exclamation: Si un firewall est installé sur le VPS, il faut autoriser préalablement ce port.
 ### Utilisation
-`docker-compose build`     
-`docker-compose up -d`
+
+> build les containers: `docker-compose build`     
+> lancer les containers en mode "détaché": `docker-compose up -d`
