@@ -32,3 +32,6 @@ wt4.ephec-ti.be.            IN          MX      10      smtp.wt4.ephec-ti.be.
 
 ; Serveurs mail
 smtp.wt4.ephec-ti.be.        IN          A           151.80.119.157
+
+; OpenDKIM -- DKIM key mail for wt4.ephec-ti.be
+mail._domainkey	   IN	  TXT    ( "v=DKIM1; k=rsa;""p=<<mykey>>" )  
