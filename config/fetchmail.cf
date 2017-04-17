@@ -1,0 +1,25 @@
+# config/fetchmail.cf
+
+poll 'imap.wt4.ephec-ti.be' proto imap
+	user 'contact'
+	pass 'f1rstcontact'
+	is 'contact@wt4.ephec-ti.betld'
+	ssl
+
+poll 'imap.wt4.ephec-ti.be' proto imap
+	user 'b2b'
+	pass 'woodymarket'
+	is 'b2b@wt4.ephec-ti.be'
+	ssl
+
+poll 'imap.wt4.ephec-ti.be' proto imap
+	user 'mathieu'
+	pass 'matiuso'
+	is 'mathieu.rousseau@wt4.ephec-ti.be'
+	ssl
+
+poll 'imap.wt4.ephec-ti.be' proto imap
+	user 'nathan'
+	pass '1mot2passe'
+	is 'nathan.dolinsky@wt4.ephec-ti.be'
+	ssl

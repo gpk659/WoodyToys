@@ -72,7 +72,7 @@ services:
         volumes:
         - mail/ingoing:/var/mail
         #- mailstate:/var/mail-state
-        - ./mail:/tmp/docker-mailserver/
+        - ./config:/tmp/docker-mailserver/
         environment:
         - ENABLE_SPAMASSASSIN=1 # antispam
         - ENABLE_CLAMAV=1 # antivirus
