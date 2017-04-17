@@ -7,4 +7,5 @@ mail/fetchmail.cf
 private.key
 public.key
 setup.sh
-mail/opendkim/keys/wt4.ephec-ti.be/mail.private
+config/opendkim/keys/wt4.ephec-ti.be/mail.private
+mail/

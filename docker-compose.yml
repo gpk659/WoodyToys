@@ -70,9 +70,9 @@ services:
         #- 110:100 # pop3
         #- 995:995 # pop3 / ssl
         volumes:
-        - mail/ingoing:/var/mail
-        #- mailstate:/var/mail-state
-        - ./config:/tmp/docker-mailserver/
+        - ./mail/ingoing:/var/mail
+        - ./mail/state:/var/mail-state
+        - ./config/:/tmp/docker-mailserver/
         - /etc/letsencrypt:/etc/letsencrypt/
         environment:
         - ENABLE_SPAMASSASSIN=1 # antispam
