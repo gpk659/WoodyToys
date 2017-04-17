@@ -84,7 +84,7 @@ services:
         - DMS_DEBUG=1 # env = dev
         - SA_TAG=2.0
         - SA_TAG2=6.31
-        #- SSL_TYPE=letsencrypt
+        - SSL_TYPE=letsencrypt
         cap_add:
         - NET_ADMIN
         volumes:

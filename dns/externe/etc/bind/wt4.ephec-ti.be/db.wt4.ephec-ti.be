@@ -9,11 +9,11 @@ $ORIGIN wt4.ephec-ti.be.
 $TTL 60
 
 @       IN      SOA    ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
-                                            2017041702 ; Serial
+                                            2017041703 ; Serial
                                             14400      ; Refresh (après 4h)
                                             3600       ; Retry (après 1 heure)
                                             1209600    ; Expire (après 1 semaine)
-                                            600 )    ; Minimum TTL (10 minutes)
+                                            60 )    ; Minimum TTL (10 minutes)
 
 ; Serveur de nom
 wt4.ephec-ti.be.        IN          NS              ns1.wt4.ephec-ti.be.
