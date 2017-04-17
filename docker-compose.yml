@@ -73,6 +73,7 @@ services:
         - mail/ingoing:/var/mail
         #- mailstate:/var/mail-state
         - ./config:/tmp/docker-mailserver/
+        - /etc/letsencrypt:/etc/letsencrypt/
         environment:
         - ENABLE_SPAMASSASSIN=1 # antispam
         - ENABLE_CLAMAV=1 # antivirus
@@ -87,5 +88,3 @@ services:
         - SSL_TYPE=letsencrypt
         cap_add:
         - NET_ADMIN
-        volumes:
-            - /etc/letsencrypt:/etc/letsencrypt/
