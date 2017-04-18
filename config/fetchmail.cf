@@ -3,7 +3,7 @@
 poll 'imap.wt4.ephec-ti.be' proto imap
 	user 'contact'
 	pass 'f1rstcontact'
-	is 'contact@wt4.ephec-ti.betld'
+	is 'contact@wt4.ephec-ti.be'
 	ssl
 
 poll 'imap.wt4.ephec-ti.be' proto imap
