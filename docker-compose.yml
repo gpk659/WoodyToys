@@ -74,6 +74,7 @@ services:
           - ./mail/state:/var/mail-state
           - ./config/:/tmp/docker-mailserver/
           - /etc/letsencrypt:/etc/letsencrypt/
+          - /etc/localtime:/etc/localtime:ro
         environment:
           - ENABLE_SPAMASSASSIN=1 # antispam
           - ENABLE_CLAMAV=1 # antivirus
