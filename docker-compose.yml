@@ -72,14 +72,14 @@ services:
         volumes:
           - ./mail/ingoing:/var/mail
           - ./mail/state:/var/mail-state
-          - ./config/:/tmp/docker-mailserver/
           - /etc/letsencrypt:/etc/letsencrypt/
           - /etc/localtime:/etc/localtime:ro
+          - ./config/:/tmp/docker-mailserver/
         environment:
           - ENABLE_SPAMASSASSIN=1 # antispam
           - ENABLE_CLAMAV=1 # antivirus
           - ENABLE_FAIL2BAN=0
-          - ENABLE_POSTGREY=1 # filtre par liste grise
+          - ENABLE_POSTGREY=0 # filtre par liste grise
           #- ENABLE_POP3=1
           - ENABLE_FETCHMAIL=1
           - ONE_DIR=1
