@@ -1,7 +1,7 @@
 # config/fetchmail.cf
 
 poll 'imap.wt4.ephec-ti.be' proto imap
-	user 'contact@wt4.ephec-ti.be''
+	user 'contact@wt4.ephec-ti.be'
 	pass 'f1rstcontact'
 	is 'contact@wt4.ephec-ti.be'
 	ssl
