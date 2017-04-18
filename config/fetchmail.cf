@@ -13,13 +13,13 @@ poll 'imap.wt4.ephec-ti.be' proto imap
 	ssl
 
 poll 'imap.wt4.ephec-ti.be' proto imap
-	user 'mathieu'
+	user 'mathieu.rousseau'
 	pass 'matiuso'
 	is 'mathieu.rousseau@wt4.ephec-ti.be'
 	ssl
 
 poll 'imap.wt4.ephec-ti.be' proto imap
-	user 'nathan'
+	user 'nathan.dolinski'
 	pass '1mot2passe'
-	is 'nathan.dolinsky@wt4.ephec-ti.be'
+	is 'nathan.dolinski@wt4.ephec-ti.be'
 	ssl
