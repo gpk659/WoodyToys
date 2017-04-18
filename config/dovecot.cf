@@ -21,7 +21,7 @@
 
 # Protocols we want to be serving: imap imaps pop3 pop3s
 # If you only want to use dovecot-auth, you can set this to "none".
-protocols = imap imaps
+#protocols = imap imaps
 
 # A space separated list of IP or host addresses where to listen in for
 # connections. "*" listens in all IPv4 interfaces. "[::]" listens in all IPv6
@@ -92,8 +92,8 @@ protocols = imap imaps
 # dropping root privileges, so keep the key file unreadable by anyone but
 # root. Included doc/mkcert.sh can be used to easily generate self-signed
 # certificate, just make sure to update the domains in dovecot-openssl.cnf
-#ssl_cert_file = /etc/letsencrypt/live/mail.wt4.ephec-ti.be/fullchain.pem
-#ssl_key_file = /etc/letsencrypt/live/mail.wt4.ephec-ti.be/privkey.pem
+#ssl_cert_file = /etc/ssl/certs/dovecot.pem
+#ssl_key_file = /etc/ssl/private/dovecot.pem
 
 # If key file is password protected, give the password here. Alternatively
 # give it when starting dovecot with -p parameter. Since this file is often
@@ -638,7 +638,7 @@ protocol pop3 {
 
   # POP3 UIDL (unique mail identifier) format to use. You can use following
   # variables, along with the variable modifiers described in
-  # <doc/wiki/Variables.txt> (e.g.  for the filename in uppercase)
+  # <doc/wiki/Variables.txt> (e.g. %Uf for the filename in uppercase)
   #
   #  %v - Mailbox's IMAP UIDVALIDITY
   #  %u - Mail's IMAP UID
@@ -839,7 +839,7 @@ auth default {
   #   plain login digest-md5 cram-md5 ntlm rpa apop anonymous gssapi otp skey
   #   gss-spnego
   # NOTE: See also disable_plaintext_auth setting.
-  mechanisms = plain login
+  mechanisms = plain
 
   #
   # Password database is used to verify user's password (and nothing more).

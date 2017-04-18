@@ -82,7 +82,7 @@ services:
           - ENABLE_POSTGREY=1 # filtre par liste grise
           #- ENABLE_POP3=1
           - ENABLE_FETCHMAIL=1
-          - ONE_DIR=0
+          - ONE_DIR=1
           - DMS_DEBUG=1 # env = dev
           - SA_TAG=2.0
           - SA_TAG2=6.31
