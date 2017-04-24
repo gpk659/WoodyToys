@@ -1,21 +1,14 @@
 version: '2.0'
 
 services:
-    dns-externe:
+    dns:
         image: resystit/bind9
         volumes:
-            - ./dns/externe/etc/bind:/etc/bind
+            - ./dns/twoinone/etc/bind:/etc/bind
+            - ./dns/twoinone/etc/resolv.conf:/etc/resolv.conf
         ports:
             - 53:53/udp
             - 53:53/tcp
-    dns-interne:
-        image: resystit/bind9
-        volumes:
-            - ./dns/interne/etc/bind:/etc/bind
-            - ./dns/interne/etc/resolv.conf:/etc/resolv.conf
-        ports:
-          - 53:53/udp
-          - 53:53/tcp
     db:
         image: postgres
         environment:
