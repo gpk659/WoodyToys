@@ -13,6 +13,9 @@ services:
         volumes:
             - ./dns/interne/etc/bind:/etc/bind
             - ./dns/interne/etc/resolv.conf:/etc/resolv.conf
+        ports:
+          - 53:53/udp
+          - 53:53/tcp
     db:
         image: postgres
         environment:
