@@ -6,6 +6,8 @@ services:
         volumes:
             - ./dns/twoinone/etc/bind:/etc/bind
             - ./dns/twoinone/etc/resolv.conf:/etc/resolv.conf
+            - ./dns/twoinone/etc/rndc.conf:/etc/rndc.conf
+            - ./dns/twoinone/etc/rndc.key:/etc/rndc.key
         ports:
             - 53:53/udp
             - 53:53/tcp
