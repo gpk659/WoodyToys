@@ -8,13 +8,6 @@ zone "wt4.ephec-ti.be" IN {
         # Fichier de zone
         file "/etc/bind/wt4.ephec-ti.be/db.wt4.ephec-ti.be";
 
-};
-
-zone "134.119.80.151.in-addr.arpa" {
-
-	type master;
-	file "/etc/bind/wt4.ephec-ti.be/db.134.119.80.151.in-addr.arpa";
-	# allow-transfer { 151.80.119.157; };
-	notify no;
+        allow-transfer { 151.80.119.157; };
 
 };
