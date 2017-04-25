@@ -78,7 +78,7 @@ services:
           - ENABLE_FETCHMAIL=1
           - ENABLE_POP3=1
           - ONE_DIR=1
-          - DMS_DEBUG=1 # env = dev
+          - DMS_DEBUG=0 # env = dev
           - SA_TAG=2.0
           - SA_TAG2=6.31
           - SASL_PASSWD="lol"
