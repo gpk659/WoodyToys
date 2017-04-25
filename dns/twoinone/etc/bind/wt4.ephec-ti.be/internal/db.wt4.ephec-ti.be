@@ -8,7 +8,7 @@ $ORIGIN wt4.ephec-ti.be.
 ; Durée de validité en seconde (10 min)
 $TTL 60
 @       IN      SOA    ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
-                                            2017031305 ; Serial
+                                            2017031307 ; Serial
                                             14400      ; Refresh (après 4h)
                                             3600       ; Retry (après 1 heure)
                                             1209600    ; Expire (après 1 semaine)
