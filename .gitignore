@@ -1,6 +1,17 @@
 */**/node_modules
 */**/*.log
 dns/var/**/*
+dns/twoinone/etc/rndc.key
 .DS_Store
+<<<<<<< HEAD
 .*
 .gitignore
+=======
+mail/ingoing/emails
+mail/fetchmail.cf
+private.key
+public.key
+setup.sh
+config/opendkim/keys/wt4.ephec-ti.be/mail.private
+mail/
+>>>>>>> e34a0b1f4d1a65a8a83bf477ea477ecd37a731f5

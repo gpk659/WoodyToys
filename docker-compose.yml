@@ -1,47 +1,85 @@
 version: '2.0'
 
 services:
-    dns-externe:
+    dns:
         image: resystit/bind9
         volumes:
-            - ./dns/externe/etc/bind:/etc/bind
-            #- ./dns/externe/etc/resolv.conf:/etc/resolv.conf
-            #- ./dns/var/cache/bind:/var/cache/bind
-            #- ./dns/var/log/named:/var/log/named
+            - ./dns/twoinone/etc/bind:/etc/bind
+            - ./dns/twoinone/etc/resolv.conf:/etc/resolv.conf
+            - ./dns/twoinone/etc/rndc.conf:/etc/rndc.conf
+            - ./dns/twoinone/etc/rndc.key:/etc/rndc.key
         ports:
             - 53:53/udp
             - 53:53/tcp
-    dns-interne:
-        image: resystit/bind9
-        volumes:
-            - ./dns/interne/etc/bind:/etc/bind
-            - ./dns/interne/etc/resolv.conf:/etc/resolv.conf
-    mail:
-        image: tvial/docker-mailserver:2.1
-        hostname: mail
-        domainname: wt4.ephec-ti.be.
-        ports:
-        - 25:25 # smtp
-        - 143:143 # imap
-        - 587:587 # smtp / ssl
-        - 993:993 # imap / ssl
-        #- 110:100 # pop3
-        #- 995:995 # pop3 / ssl
-        volumes:
-        - mail/ingoing/emails:/var/mail
-        #- mailstate:/var/mail-state
-        - ./mail:/tmp/docker-mailserver/
+    db:
+        image: postgres
         environment:
-        - ENABLE_SPAMASSASSIN=1 # antispam
-        - ENABLE_CLAMAV=1 # antivirus
-        - ENABLE_FAIL2BAN=1
-        - ENABLE_POSTGREY=1 # filtre par liste grise
-        #- ENABLE_POP3=1
-        - ENABLE_FETCHMAIL=1
-        - ONE_DIR=0
-        - DMS_DEBUG=1 # env = dev
-        - SA_TAG=2.0
-        - SA_TAG2=6.31
-        #- SSL_TYPE=letsencrypt
-        cap_add:
-        - NET_ADMIN
+            - POSTGRES_USER=woodytoys
+            - POSTGRES_PASSWORD=superwoody
+            - POSTGRES_DB=woodymarket
+    nginx:
+        restart: always
+        build:
+            context: ./nginx
+        image: 'woodytoys/nginx'
+        ports:
+            - 80:80
+            - 443:443
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/mime.types:/etc/nginx/mime.types
+            - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be/
+            - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
+            - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be
+            - /etc/letsencrypt:/etc/letsencrypt/
+        links:
+            - public:public
+            - marketplace:marketplace
+            - intranet:intranet
+    public:
+        image: php:7.1.2-fpm
+        volumes:
+            - ./websites/wt4.ephec-ti.be:/var/www/wt4.ephec-ti.be
+    marketplace:
+        build:
+            context: ./websites/b2b.wt4.ephec-ti.be
+        image: 'woodytoys/marketplace'
+        volumes:
+            - ./websites/b2b.wt4.ephec-ti.be:/var/www/b2b.wt4.ephec-ti.be
+            - ./websites/php.ini:/usr/local/etc/php/php.ini
+        links:
+            - db:db
+    intranet:
+        image: php:7.1.2-fpm
+        volumes:
+            - ./websites/intranet.wt4.ephec-ti.be:/var/www/intranet.wt4.ephec-ti.be
+    mail:
+        image: tvial/docker-mailserver:latest
+        hostname: mail
+        domainname: wt4.ephec-ti.be
+        ports:
+          - "25:25"
+          - "143:143"
+          - "587:587"
+          - "993:993"
+          - "110:110"
+          - "995:995"
+        volumes:
+          - ./mail/ingoing:/var/mail
+          - ./mail/state:/var/mail-state
+          - /etc/letsencrypt:/etc/letsencrypt/
+          - /etc/localtime:/etc/localtime:ro
+          - ./config/:/tmp/docker-mailserver/
+        environment:
+          - ENABLE_SPAMASSASSIN=1 # antispam
+          - ENABLE_CLAMAV=1 # antivirus
+          - ENABLE_FAIL2BAN=0
+          - ENABLE_POSTGREY=0 # filtre par liste grise
+          - ENABLE_FETCHMAIL=1
+          - ENABLE_POP3=1
+          - ONE_DIR=1
+          - DMS_DEBUG=0 # 1: env = dev
+          - SA_TAG=2.0
+          - SA_TAG2=6.31
+          - SASL_PASSWD="lol"
+          - SSL_TYPE=letsencrypt
