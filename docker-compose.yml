@@ -83,3 +83,9 @@ services:
           - SA_TAG2=6.31
           - SASL_PASSWD="lol"
           - SSL_TYPE=letsencrypt
+    asterisk:
+        image : matiuso/alpisterisk:latest
+        ports:
+          - 5060:5060
+        volumes:
+          - ./voip/etc/asterisk/:/etc/asterisk
