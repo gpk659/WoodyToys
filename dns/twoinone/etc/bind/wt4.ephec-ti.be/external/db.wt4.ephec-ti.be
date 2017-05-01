@@ -29,6 +29,7 @@ www                         IN          CNAME  wt4.ephec-ti.be.
 imap                        IN          CNAME  wt4.ephec-ti.be.
 smtp                        IN          CNAME  wt4.ephec-ti.be.
 pop3                        IN          CNAME  wt4.ephec-ti.be.
+sip                         IN          CNAME  wt4.ephec-ti.be.
 
 ; MX
 wt4.ephec-ti.be.            IN          MX      10      mail.wt4.ephec-ti.be.
