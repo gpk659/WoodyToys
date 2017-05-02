@@ -93,5 +93,5 @@ services:
           - ./voip/etc/asterisk/extensions.conf:/etc/asterisk/extensions.conf
           - ./voip/etc/asterisk/rtp.conf:/etc/asterisk/rtp.conf
           - ./voip/etc/asterisk/sip.conf:/etc/asterisk/sip.conf
-          - ./voip/etc/users.conf:/etc/asterisk/users.conf
-          - ./voicemail/voicemail:/etc/asterisk/voicemail.conf
+          - ./voip/etc/asterisk/users.conf:/etc/asterisk/users.conf
+          - ./voip/etc/asterisk/voicemail.conf:/etc/asterisk/voicemail.conf
