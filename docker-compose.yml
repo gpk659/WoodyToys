@@ -91,4 +91,4 @@ services:
           - 8000-8008:8000-8008/udp
         volumes: # fichiers intéressants => extensions, rtp, sip, users, voicemail
           - ./voip/etc/asterisk/default/:/etc/asterisk/
-          - ./voip/etc/asterisk/:/etc/asterisk/
+          #- ./voip/etc/asterisk/:/etc/asterisk/
