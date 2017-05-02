@@ -84,15 +84,11 @@ services:
           - SASL_PASSWD="lol"
           - SSL_TYPE=letsencrypt
     asterisk:
-        image: quaipsolutions/asterisk:latest
+        image: respoke/asterisk:latest
         ports:
           - 5060:5060/udp
           - 5060:5060/tcp
           - 8000-8008:8000-8008/udp
         volumes: # fichiers intéressants => extensions, rtp, sip, users, voicemail
-          #- ./voip/etc/asterisk/extensions.conf:/etc/asterisk/extensions.conf
-          #- ./voip/etc/asterisk/rtp.conf:/etc/asterisk/rtp.conf
-          #- ./voip/etc/asterisk/sip.conf:/etc/asterisk/sip.conf
-          #- ./voip/etc/asterisk/users.conf:/etc/asterisk/users.conf
-          #- ./voip/etc/asterisk/voicemail.conf:/etc/asterisk/voicemail.conf
-          - ./voip/etc/asterisk/:/etc/asterisk
+          - ./voip/etc/asterisk/default/*.conf:/etc/asterisk/*.conf
+          - ./voip/etc/asterisk/*.conf:/etc/asterisk/*.conf
