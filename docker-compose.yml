@@ -84,7 +84,7 @@ services:
           - SASL_PASSWD="lol"
           - SSL_TYPE=letsencrypt
     asterisk:
-        image: matiuso/alpisterisk:latest
+        image: respoke/asterisk:latest
         ports:
           - 5060:5060/udp
           - 5060:5060/tcp
