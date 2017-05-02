@@ -89,4 +89,8 @@ services:
           - 5060:5060/udp
           - 5060:5060/tcp
         volumes:
-          - ./voip/etc/asterisk/:/etc/asterisk
+          - ./voip/etc/asterisk/extensions.conf:/etc/asterisk/extensions.conf
+          - ./voip/etc/asterisk/rtp.conf:/etc/asterisk/rtp.conf
+          - ./voip/etc/asterisk/sip.conf:/etc/asterisk/sip.conf
+          - ./voip/etc/users.conf:/etc/asterisk/users.conf
+          - ./voicemail/voicemail:/etc/asterisk/voicemail.conf
