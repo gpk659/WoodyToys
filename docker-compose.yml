@@ -91,5 +91,8 @@ services:
           - 5060:5060/tcp
           - 8000-8008:8000-8008/udp
         volumes: # fichiers intéressants => extensions, rtp, sip, users, voicemail
-          #- ./voip/etc/asterisk/default/:/etc/asterisk/
-          - ./voip/etc/asterisk/:/etc/asterisk/
+          - ./voip/etc/asterisk/modif/extensions.conf:/etc/asterisk/extensions.conf
+          - ./voip/etc/asterisk/modif/rtp.conf:/etc/asterisk/rtp.conf
+          - ./voip/etc/asterisk/modif/sip.conf:/etc/asterisk/sip.conf
+          - ./voip/etc/asterisk/modif/users.conf:/etc/asterisk/users.conf
+          - ./voip/etc/asterisk/modif/voicemail.conf:/etc/asterisk/voicemail.conf
