@@ -96,3 +96,4 @@ services:
           - ./voip/etc/asterisk/modif/sip.conf:/etc/asterisk/sip.conf
           - ./voip/etc/asterisk/modif/users.conf:/etc/asterisk/users.conf
           - ./voip/etc/asterisk/modif/voicemail.conf:/etc/asterisk/voicemail.conf
+          - /etc/localtime:/etc/localtime:ro
