@@ -4,9 +4,12 @@ dns/var/**/*
 dns/twoinone/etc/rndc.key
 .DS_Store
 <<<<<<< HEAD
+<<<<<<< HEAD
 .*
 .gitignore
 =======
+=======
+>>>>>>> 9fb8af8e6e669fe6e879a19545b44d6ec5148c6d
 mail/ingoing/emails
 mail/fetchmail.cf
 private.key
@@ -14,4 +17,7 @@ public.key
 setup.sh
 config/opendkim/keys/wt4.ephec-ti.be/mail.private
 mail/
+<<<<<<< HEAD
 >>>>>>> e34a0b1f4d1a65a8a83bf477ea477ecd37a731f5
+=======
+>>>>>>> 9fb8af8e6e669fe6e879a19545b44d6ec5148c6d

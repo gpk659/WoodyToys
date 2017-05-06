@@ -74,7 +74,11 @@ services:
           - ENABLE_SPAMASSASSIN=1 # antispam
           - ENABLE_CLAMAV=1 # antivirus
           - ENABLE_FAIL2BAN=0
+<<<<<<< HEAD
           - ENABLE_POSTGREY=0 # filtre par liste grise
+=======
+          - ENABLE_POSTGREY=1 # filtre par liste grise
+>>>>>>> 9fb8af8e6e669fe6e879a19545b44d6ec5148c6d
           - ENABLE_FETCHMAIL=1
           - ENABLE_POP3=1
           - ONE_DIR=1
@@ -84,8 +88,24 @@ services:
           - SASL_PASSWD="lol"
           - SSL_TYPE=letsencrypt
     asterisk:
+<<<<<<< HEAD
         image : matiuso/alpisterisk:latest
         ports:
           - 5060:5060
         volumes:
           - ./voip/etc/asterisk/:/etc/asterisk
+=======
+        image: matiuso/debisterisk:latest
+        #network_mode: host
+        ports:
+          - 5060:5060/udp
+          - 5060:5060/tcp
+          - 9080:9080
+          - 16384-16394:16384-16394/udp
+        volumes: # fichiers intéressants => extensions, sip, users, voicemail
+          - ./voip/etc/asterisk/modif/extensions.conf:/etc/asterisk/extensions.conf
+          - ./voip/etc/asterisk/modif/sip.conf:/etc/asterisk/sip.conf
+          - ./voip/etc/asterisk/modif/users.conf:/etc/asterisk/users.conf
+          - ./voip/etc/asterisk/modif/voicemail.conf:/etc/asterisk/voicemail.conf
+          - /etc/localtime:/etc/localtime:ro
+>>>>>>> 9fb8af8e6e669fe6e879a19545b44d6ec5148c6d
