@@ -29,13 +29,16 @@ www                         IN          CNAME  wt4.ephec-ti.be.
 imap                        IN          CNAME  wt4.ephec-ti.be.
 smtp                        IN          CNAME  wt4.ephec-ti.be.
 pop3                        IN          CNAME  wt4.ephec-ti.be.
-sip                         IN          CNAME  wt4.ephec-ti.be.
+; sip                         IN          CNAME  wt4.ephec-ti.be.
 
 ; MX
 wt4.ephec-ti.be.            IN          MX      10      mail.wt4.ephec-ti.be.
 
 ; Serveurs mail
-mail.wt4.ephec-ti.be.        IN          A           151.80.119.157
+mail.wt4.ephec-ti.be.        IN          A           151.80.119.134
+
+; Serveur voip
+sip.wt4.ephec-ti.be.         IN          A           151.80.119.157
 
 ; OpenDKIM -- DKIM key mail for wt4.ephec-ti.be
 mail._domainkey	   IN	  TXT    ( "v=DKIM1; k=rsa;""p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDJmgmIDPT3IKd3K+XGqrZy4gr7N/TNbtcf2pcCwCadSHi46iXMIweadtlst2mK1rJ7hO4v1oIyx2L1fjnC6gdn9P6MEyy5jB3qqz65IlNg6BPMRrSTKDZ2er+8I9Ai5FHrAnPP5h7PpPhsKps/oKNTWi9vDQUqi/LH9j10a/AqrQIDAQAB" )
