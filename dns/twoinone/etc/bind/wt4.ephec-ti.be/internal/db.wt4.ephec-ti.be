@@ -17,7 +17,7 @@ $TTL 60
 ; Serveur de nom
 wt4.ephec-ti.be.        IN          NS              ns1.wt4.ephec-ti.be.
 wt4.ephec-ti.be.        IN          NS              ns2.wt4.ephec-ti.be.
-ns1.wt4.ephec-ti.be.    IN          A				        151.80.119.134
+ns1.wt4.ephec-ti.be.    IN          A	            151.80.119.134
 ns2.wt4.ephec-ti.be.    IN          A               151.80.119.157
 
 ; Sous-domaines - Serveurs Web
