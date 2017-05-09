@@ -11,3 +11,15 @@ services:
         ports:
             - 53:53/udp
             - 53:53/tcp
+    asterisk:
+        image: matiuso/debisterisk:latest
+        ports:
+          - 5060:5060/udp
+          - 5060:5060/tcp
+          - 16384-16394:16384-16394/udp
+        volumes: # fichiers intéressants => extensions, sip, users, voicemail
+          - ./voip/etc/asterisk/modif/extensions.conf:/etc/asterisk/extensions.conf
+          - ./voip/etc/asterisk/modif/sip.conf:/etc/asterisk/sip.conf
+          - ./voip/etc/asterisk/modif/users.conf:/etc/asterisk/users.conf
+          - ./voip/etc/asterisk/modif/voicemail.conf:/etc/asterisk/voicemail.conf
+          - /etc/localtime:/etc/localtime:ro
