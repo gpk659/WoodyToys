@@ -2,6 +2,7 @@
 */**/*.log
 dns/var/**/*
 dns/twoinone/etc/rndc.key
+dns-secondaire/twoinone/etc/rndc.key
 .DS_Store
 mail/ingoing/emails
 mail/fetchmail.cf
