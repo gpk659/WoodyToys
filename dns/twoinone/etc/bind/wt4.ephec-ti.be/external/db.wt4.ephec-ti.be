@@ -24,6 +24,7 @@ ns2.wt4.ephec-ti.be.    IN          A               151.80.119.157
 ; Sous-domaines - Serveurs Web
 wt4.ephec-ti.be.            IN          A      151.80.119.134
 b2b.wt4.ephec-ti.be.        IN          A			 151.80.119.134
+owncloud.wt4.ephec-ti.be    IN          A      151.80.119.157
 
 www                         IN          CNAME  wt4.ephec-ti.be.
 imap                        IN          CNAME  wt4.ephec-ti.be.
