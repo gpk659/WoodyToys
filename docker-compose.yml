@@ -11,6 +11,43 @@ services:
         ports:
             - 53:53/udp
             - 53:53/tcp
+    nginxCloud:
+        image: nginx
+        restart: always
+        ports:
+            - 80:80
+            - 443:443
+        links:
+            - cloud_engine
+        volumes:
+            - ./owncloud/etc/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+            - /var/log/nginx:/var/log/nginx
+            - ./owncloud/etc/letsencrypt:/etc/letsencrypt
+    cloud_engine:
+        image: owncloud:latest  
+        expose:
+            - "80"
+        volumes:
+            - ./owncloud/data:/var/www/html/data
+            - ./owncloud/config:/var/www/html/config
+        links:
+            - cloud_db
+            - cloud_cache
+    cloud_db:
+        image: mysql:latest
+        expose:
+            - "3306"
+        environment:
+            MYSQL_DATABASE: owncloud
+            MYSQL_USER: owncloud
+            MYSQL_PASSWORD: password
+            MYSQL_ROOT_PASSWORD: r00tpassword
+        volumes:
+            - ./owncloud/mysql:/var/lib/mysql
+    cloud_cache:
+        image: redis:latest
+        expose:
+            - "6379"
     asterisk:
         image: matiuso/debisterisk:latest
         ports:
