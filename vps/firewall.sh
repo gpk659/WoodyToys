@@ -22,7 +22,9 @@ sudo ufw allow 587
 echo "autorisation des mails sortants"
 sudo ufw allow 110
 sudo ufw allow 993
-echo "autorisation de la voip"
+echo "autorisation de la voip (sip)"
 sudo ufw allow 5060
+echo "autorisation du protocole IAX2"
+sudo ufw allow 4569/tcp
 echo "Activation du pare-feu..."
 sudo ufw enable -y
